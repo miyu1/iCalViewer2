@@ -1,0 +1,44 @@
+﻿html
+{
+    height: 100%;
+    overflow: auto;
+}
+body
+{
+	font-family: Segoe UI, Tahoma, Verdana;
+	overflow: auto;
+	width:200px;
+	height:200px;
+	padding:0px;
+	margin:0px;
+	background: url('/images/Back.png');
+	background-repeat:repeat;
+}
+#silverlightControlHost
+{
+    height: 100%;
+}
+#docked
+{
+	width: 100%;
+	height: 100%;
+	font-size: 7pt;
+	padding:0px;
+	margin: 0px;
+}
+#undocked
+{
+	width:100%;
+	height:100%;
+    font-size:7pt;
+    padding:0px;
+	margin: 0px;
+}
+#docked input
+{
+	font-size:7pt;
+}
+#undocked input
+{
+	font-size:7pt;
+}

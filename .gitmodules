@@ -1,0 +1,3 @@
+[submodule "iCalLibrary"]
+	path = iCalLibrary
+	url = git://github.com/miyu1/iCalLibrary.git

@@ -1,0 +1,75 @@
+﻿<!-- 
+// Silverlight Vista Sidebar Gadget Template created by Ioan Lazarciuc
+// http://www.lazarciuc.ro/ioan
+// Contact form present on website
+// Based on the Vista Sidebar Gadget Template created by Tim Heuer 
+// http://timheuer.com/blog/
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Silverlight Gadget Flyout</title>
+    
+    <link rel="stylesheet" href="styles/flyout.css" type="text/css" />
+    <script language="javascript" type="text/javascript" src="script/flyoututils.js"></script>
+    
+    <script type="text/javascript">
+        function onSilverlightError(sender, args) {
+            var appSource = "";
+            if (sender != null && sender != 0) {
+                appSource = sender.getHost().Source;
+            }
+
+            var errorType = args.ErrorType;
+            var iErrorCode = args.ErrorCode;
+
+            if (errorType == "ImageError" || errorType == "MediaError") {
+                return;
+            }
+
+            var errMsg = "Unhandled Error in Silverlight Application " + appSource + "\n";
+
+            errMsg += "Code: " + iErrorCode + "    \n";
+            errMsg += "Category: " + errorType + "       \n";
+            errMsg += "Message: " + args.ErrorMessage + "     \n";
+
+            if (errorType == "ParserError") {
+                errMsg += "File: " + args.xamlFile + "     \n";
+                errMsg += "Line: " + args.lineNumber + "     \n";
+                errMsg += "Position: " + args.charPosition + "     \n";
+            }
+            else if (errorType == "RuntimeError") {
+                if (args.lineNumber != 0) {
+                    errMsg += "Line: " + args.lineNumber + "     \n";
+                    errMsg += "Position: " + args.charPosition + "     \n";
+                }
+                errMsg += "MethodName: " + args.methodName + "     \n";
+            }
+
+            throw new Error(errMsg);
+        }
+    </script>
+</head>
+<body  style="background-color:Purple;">
+    <!-- Runtime errors from Silverlight will be displayed here.
+	This will contain debugging information and should be removed or hidden when debugging is completed -->
+	<div id='errorLocation' style="font-size: small;color: Gray;"></div>
+
+    <div id="silverlightPresentationHost">
+		<object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="100%" height="100%"
+		        id="silgf">
+			<param name="source" value="x-gadget:///ClientBin/iCalFlyout.xap"/>
+			<param name="onerror" value="onSilverlightError" />
+			<param name="background" value="Transparent" />
+			<param name="iswindowless" value="true" />
+			<param name="minRuntimeVersion" value="4.0.50826.0" />
+			<param name="autoUpgrade" value="false" />
+			
+			<a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50826.0" style="text-decoration: none;">
+     			<img src="images/InstallSilverlight.png" alt="Get Microsoft Silverlight" style="border-style: none"/>
+			</a>
+		</object>
+		<iframe style='visibility:hidden;height:0;width:0;border:0px'></iframe>
+    </div>
+</body>
+</html>

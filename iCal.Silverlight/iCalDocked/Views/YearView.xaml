@@ -1,0 +1,84 @@
+﻿<!-- Copyright 2011 Miyako Komooka -->
+<navigation:Page
+    x:Class="iCalDocked.Views.YearView" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:my="clr-namespace:iCalControls;assembly=iCalControls"  
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    Width="124" Height="105"
+    Title="YearView Page">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resources/App.Dictionary.xaml" />
+
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- my:HyperlinkUnderline x:Name="Mon1" TargetName="View"
+                               Grid.Row="0" Grid.Column="0"
+                               Content="{Binding Path=StringLibrary.Month01, Source={StaticResource LocalizedStrings}}" / -->
+
+        <my:HyperlinkUnderline x:Name="Mon1" TargetName="View"
+                               Grid.Row="0" Grid.Column="0"
+                               Content="1" />
+        <my:HyperlinkUnderline x:Name="Mon2" TargetName="View"
+                               Grid.Row="0" Grid.Column="1"
+                               Content="2" />
+        <my:HyperlinkUnderline x:Name="Mon3" TargetName="View"
+                               Grid.Row="0" Grid.Column="2"
+                               Content="3" />
+
+        <my:HyperlinkUnderline x:Name="Mon4" TargetName="View"
+                               Grid.Row="1" Grid.Column="0"
+                               Content="4" />
+        <my:HyperlinkUnderline x:Name="Mon5" TargetName="View"
+                               Grid.Row="1" Grid.Column="1"
+                               Content="5" />
+        <my:HyperlinkUnderline x:Name="Mon6" TargetName="View"
+                               Grid.Row="1" Grid.Column="2"
+                               Content="6" />
+
+        <my:HyperlinkUnderline x:Name="Mon7" TargetName="View"
+                               Grid.Row="2" Grid.Column="0"
+                               Content="7" />
+        <my:HyperlinkUnderline x:Name="Mon8" TargetName="View"
+                               Grid.Row="2" Grid.Column="1"
+                               Content="8" />
+        <my:HyperlinkUnderline x:Name="Mon9" TargetName="View"
+                               Grid.Row="2" Grid.Column="2"
+                               Content="9" />
+        
+        <my:HyperlinkUnderline x:Name="Mon10" TargetName="View"
+                               Grid.Row="3" Grid.Column="0"
+                               Content="10" />
+        <my:HyperlinkUnderline x:Name="Mon11" TargetName="View"
+                               Grid.Row="3" Grid.Column="1"
+                               Content="11" />
+        <my:HyperlinkUnderline x:Name="Mon12" TargetName="View"
+                               Grid.Row="3" Grid.Column="2"
+                               Content="12" />
+
+        <HyperlinkButton x:Name="Home" Grid.Row="5" Grid.Column="3"
+                         TargetName="View" NavigateUri="/Month"
+                         VerticalAlignment="Center">
+            <my:HomeIcon x:Name="HomeIcon" FillColor="LightGray" />
+        </HyperlinkButton>
+    </Grid>
+</navigation:Page>

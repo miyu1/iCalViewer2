@@ -1,0 +1,10 @@
+﻿<!-- Copyright 2011 Miyako Komooka -->
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="iCalSettings.App"
+             >
+    <Application.Resources>
+      <local:LocalizedStrings xmlns:local ="clr-namespace:iCalSettings"
+                              x:Key="LocalizedStrings" />
+    </Application.Resources>
+</Application>

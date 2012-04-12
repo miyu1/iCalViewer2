@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+  <!-- The name will appear on the Gadget Tile and settings window -->
+  <name>iCal Viewer2</name>
+  <!-- namespace>[Your Namespace Here]</namespace -->
+  <version>1.0.0</version>
+  <author name="Miyu">
+    <!-- info url="[Your URL Here]" / -->
+    <logo src="icon.png" />
+  </author>
+  <copyright>&#169; 2011</copyright>
+  <!-- The description displays in the Gadget Tile window when the Gadget is selected -->
+  <description>Show your schedule on calendar,using iCalendar format file.</description>
+  <icons>
+    <icon height="48" width="48" src="icon.png" />
+  </icons>
+  <hosts>
+    <host name="sidebar">
+      <base type="HTML" apiVersion="1.0.0" src="gadget.html" />
+      <permissions>Full</permissions>
+      <platform minPlatformVersion="1.0" />
+      <defaultImage src="icon.png" />
+    </host>
+  </hosts>
+</gadget>

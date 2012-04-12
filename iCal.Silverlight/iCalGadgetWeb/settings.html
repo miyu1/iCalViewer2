@@ -1,0 +1,164 @@
+﻿<!--
+// Copyright 2011 Miyako Komooka
+// Based on Silverlight Vista Sidebar Gadget Template by Ioan Lazarciuc
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Settings</title>
+    
+    <!-- link rel="stylesheet" href="styles/settings.css" type="text/css" / -->
+    <script language="javascript" type="text/javascript" src="script/settingsutils.js"></script>
+    <script language="javascript" type="text/javascript" src="script/fileload.js"></script>
+    
+    <script type="text/javascript">
+        function onSilverlightError(sender, args) {
+            var appSource = "";
+            if (sender != null && sender != 0) {
+                appSource = sender.getHost().Source;
+            }
+
+            var errorType = args.ErrorType;
+            var iErrorCode = args.ErrorCode;
+
+            if (errorType == "ImageError" || errorType == "MediaError") {
+                return;
+            }
+
+            var errMsg = "Unhandled Error in Silverlight Application " + appSource + "\n";
+
+            errMsg += "Code: " + iErrorCode + "    \n";
+            errMsg += "Category: " + errorType + "       \n";
+            errMsg += "Message: " + args.ErrorMessage + "     \n";
+
+            if (errorType == "ParserError") {
+                errMsg += "File: " + args.xamlFile + "     \n";
+                errMsg += "Line: " + args.lineNumber + "     \n";
+                errMsg += "Position: " + args.charPosition + "     \n";
+            }
+            else if (errorType == "RuntimeError") {
+                if (args.lineNumber != 0) {
+                    errMsg += "Line: " + args.lineNumber + "     \n";
+                    errMsg += "Position: " + args.charPosition + "     \n";
+                }
+                errMsg += "MethodName: " + args.methodName + "     \n";
+            }
+
+            throw new Error(errMsg);
+        }
+
+        function onSilverlightLoad(sender, args) {
+            startLoadCalendar();
+        }
+
+
+function choosefile()
+{
+    var item = null;
+    item = System.Shell.chooseFile(true,
+                                   "iCal File:*.ics:All:*::",
+                                    "",
+                                    "" );
+
+    // file selected?
+    if( item ){
+        return item.path;
+        // var name = item.name;
+
+        // var path = item.path;
+        // var strlen = path.length - name.length -1;
+        // gICalDirectory = item.path.substring( 0, strlen );
+        // gICalFile = item.path;
+        // alert( "file:" + gICalFile );
+
+        // var txt = document.getElementById( "file" );
+        // txt.value = gICalFile;
+    } else {
+        return "";
+    }
+}
+
+function chooseCommand()
+{
+    var item = null;
+    item = System.Shell.chooseFile(true,
+                                   "Executable:*.exe;*.bat;*.cmd:All:*::",
+                                    "",
+                                    "" );
+
+    // file selected?
+    if( item ){
+        return item.path;
+    } else {
+        return "";
+    }
+}
+
+function GetItemFromDrop()
+{
+    var result = event.dataTransfer.getData( "URL" );
+    if( result == null ){
+        var oItem = System.Shell.itemFromFileDrop(event.dataTransfer, 0)
+        if (oItem.isFileSystem == true){
+            result = oItem.path;
+        }
+    }
+    if( result != null ){
+        var sgs = document.getElementById("silgs");
+        try {
+            if (sgs != null && sgs != undefined){
+                sgs.content.settingGadget.SetCalendarFile( result );
+            }
+        }
+        catch (ex) {
+        }
+    }
+}
+    </script>
+</head>
+<body onload="init();"
+      
+      style="background-color:#105090; height:400px; width:280px; margin:0px; padding:0px;">
+    <!-- Runtime errors from Silverlight will be displayed here.
+	This will contain debugging information and should be removed or hidden when debugging is completed -->
+    <!-- div id='errorLocation' style="font-size: small;color: Gray;"></div -->
+	
+    <div id="docked" style="background-color:#105090;"
+         ondragenter="event.returnValue = false"
+         ondragover="event.returnValue = false"
+         ondrop="GetItemFromDrop()"  >
+        <object data="data:application/x-silverlight-2,"
+                type="application/x-silverlight-2" width="130" height="130"
+                id="silgd" style="margin-left:75px;">
+	  <param name="source" value="ClientBin/iCalDocked.xap"/>
+	  <param name="onError" value="onSilverlightError" />
+          <param name="onload" value="onSilverlightLoad" />
+	  <param name="background" value="#105090" />
+	  <param name="minRuntimeVersion" value="5.0.60401.0" />
+	  <param name="autoUpgrade" value="true" />
+          <param name="initParams" value="SettingMode=true" />
+	  <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.60401.0" style="text-decoration:none">
+            <img src="images/InstallSilverlight.png"
+                 alt="Get Microsoft Silverlight" style="border-style: none"/>
+ 	    <!-- img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Microsoft Silverlight の取得" style="border-style:none"/ -->
+	  </a>
+	</object><iframe style="visibility:hidden;height:0px;width:0px;border:0px"></iframe></div>
+
+    <div id="setting">
+      <object data="data:application/x-silverlight-2,"
+              type="application/x-silverlight-2" width="280" height="270"
+              id="silgs">
+	<param name="source" value="ClientBin/iCalSettings.xap"/>
+	<param name="onError" value="onSilverlightError" />
+	<param name="background" value="white" />
+	<param name="minRuntimeVersion" value="5.0.60401.0" />
+	<param name="autoUpgrade" value="true" />
+	<a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.60401.0" style="text-decoration:none">
+          <img src="images/InstallSilverlight.png"
+               alt="Get Microsoft Silverlight" style="border-style: none"/>
+ 	  <!-- img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Microsoft Silverlight の取得" style="border-style:none"/ -->
+	</a>
+      </object><iframe style="visibility:hidden;height:0px;width:0px;border:0px"></iframe></div>
+
+</body>
+</html>

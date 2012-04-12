@@ -1,0 +1,20 @@
+﻿body
+{
+    width: 300;
+    height: 600;
+    margin-top: 0;
+    margin-left: 0;
+    font-family: segoe UI;
+    font-size: 8pt;
+}
+table
+{
+    font-family: segoe UI;
+    font-size: 8pt;
+}
+input
+{
+    font-family: segoe UI;
+    font-size: 8pt;
+    text-align: center;
+}

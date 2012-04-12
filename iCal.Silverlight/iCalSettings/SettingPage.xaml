@@ -1,0 +1,314 @@
+﻿<!-- Copyright 2011 Miyako Komooka -->
+<UserControl
+    x:Class="iCalSettings.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:my="clr-namespace:iCalControls;assembly=iCalControls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="280" Height="265" SizeChanged="UserControl_SizeChanged">
+    <Grid x:Name="LayoutRoot" Background="White">
+      <StackPanel>
+        <sdk:TabControl>
+          <sdk:TabItem
+              Header="{Binding Path=StringLibrary.Tab1_Calendar, Source={StaticResource LocalizedStrings}}" >
+            <StackPanel Height="208" >
+              <TextBlock
+                  Text="{Binding Path=StringLibrary.Tab1Item_CalendarFile, Source={StaticResource LocalizedStrings}}" />
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="CalendarFile" Grid.Column="0"/>
+                <Button Content="{Binding Path=StringLibrary.Choose, Source={StaticResource LocalizedStrings}}" ClickMode="Press" Grid.Column="1"
+                        Click="SelectCalendar"/>
+              </Grid>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition />
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab1Item_UserID, Source={StaticResource LocalizedStrings}}" />
+                <TextBox x:Name="UID" Grid.Column="1" />
+                <TextBlock Grid.Column="2" VerticalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab1Item_Password, Source={StaticResource LocalizedStrings}}" />
+                <PasswordBox x:Name="Password" Grid.Column="3" />
+              </Grid>
+              <TextBlock Text="{Binding Path=StringLibrary.Tab1Item_HolidayFile, Source={StaticResource LocalizedStrings}}" Margin="0,5,0,0"/>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="HolidayFile" Grid.Column="0"/>
+                <Button Grid.Column="1" ClickMode="Press"
+                        Click="SelectHolidayCalendar"
+                        Content="{Binding Path=StringLibrary.Choose, Source={StaticResource LocalizedStrings}}"   />
+              </Grid>
+              <!-- TextBlock Text="* URL(http://..)も指定できます" HorizontalAlignment="Right" / -->
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition />
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab1Item_UserID, Source={StaticResource LocalizedStrings}}" />
+                <TextBox x:Name="UID2" Grid.Column="1" />
+                <TextBlock Grid.Column="2" VerticalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab1Item_Password, Source={StaticResource LocalizedStrings}}" />
+                <PasswordBox x:Name="Password2" Grid.Column="3" />
+              </Grid>
+              <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <Button Click="ConnectionTest"
+                        Content="{Binding Path=StringLibrary.Tab1Item_ConnectionTest, Source={StaticResource LocalizedStrings}}"  />
+                <Button Click="ClearTest"
+                        Content="{Binding Path=StringLibrary.Tab1Item_Clear, Source={StaticResource LocalizedStrings}}"  />
+              </StackPanel>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto"/>
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0"
+                           VerticalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab1Item_NormalCalendar, Source={StaticResource LocalizedStrings}}"  />
+                <TextBox x:Name="CalendarInfo" Grid.Column="1" Grid.Row="0"
+                         Text="" />
+                <TextBlock Grid.Column="0" Grid.Row="1"
+                           VerticalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab1Item_HolidayCalendar, Source={StaticResource LocalizedStrings}}" />
+                <TextBox x:Name="HolidayInfo" Grid.Column="1" Grid.Row="1"
+                         Text="" />
+              </Grid>
+            </StackPanel>
+          </sdk:TabItem>
+
+          <sdk:TabItem Header="{Binding Path=StringLibrary.Tab2_View, Source={StaticResource LocalizedStrings}}">
+            <StackPanel Height="208" >
+              <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=StringLibrary.Tab2Item_BackgroundColor, Source={StaticResource LocalizedStrings}}" Margin="0,0,5,0"
+                           VerticalAlignment="Center" />
+                <my:ColorPicker x:Name="BackgroundColor"
+                                Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+              </StackPanel>
+              
+              <TextBlock Text="{Binding Path=StringLibrary.Tab2Item_Icons, Source={StaticResource LocalizedStrings}}" Margin="0,3,0,0" />
+              <Grid Height="44" >
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition Width="45" />
+                  <ColumnDefinition />
+                  <ColumnDefinition Width="45" />
+                  <ColumnDefinition />
+                  <ColumnDefinition Width="45" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="auto" />
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                
+
+                <my:Arrow Grid.Column="0" />
+                <my:ColorPicker x:Name="ArrowColor" Grid.Column="1"
+                                SelectionChanged="ColorPickerChanged" />
+                
+                <my:HomeIcon Grid.Column="2" Grid.Row="0" />
+                <my:ColorPicker x:Name="HomeIconColor"
+                                Grid.Column="3" Grid.Row="0"
+                                SelectionChanged="ColorPickerChanged" />
+
+                <my:ReloadIcon Grid.Column="4" Grid.Row="0" />
+                <my:ColorPicker x:Name="ReloadIconColor"
+                                Grid.Column="5" Grid.Row="0"
+                                SelectionChanged="ColorPickerChanged" />
+                
+                <my:ClockIcon Grid.Column="0" Grid.Row="2" />
+                <my:ColorPicker x:Name="ClockIconColor"
+                                Grid.Column="1" Grid.Row="2"
+                                SelectionChanged="ColorPickerChanged" />
+
+                <my:InfoIcon Grid.Column="2" Grid.Row="2" />
+                <my:ColorPicker x:Name="InfoIconColor"
+                                Grid.Column="3" Grid.Row="2"
+                                SelectionChanged="ColorPickerChanged" />
+              </Grid>
+
+              <TextBlock Margin="0,3,0,0"
+                         Text="{Binding Path=StringLibrary.Tab2Item_Days, Source={StaticResource LocalizedStrings}}" />
+              <Grid Height="100" >
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="auto" />
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="auto" />
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="auto" />
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="auto" />
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Column="0" Grid.Row="2"
+                           HorizontalAlignment="Right"
+                           Text="{Binding Path=StringLibrary.Tab2Item_DayForeground, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock Grid.Column="0" Grid.Row="4"
+                           HorizontalAlignment="Right" TextWrapping="Wrap"
+                           Text="{Binding Path=StringLibrary.Tab2Item_DayBackground, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock Grid.Column="0" Grid.Row="6"
+                           HorizontalAlignment="Right"
+                           Text="{Binding Path=StringLibrary.Tab2Item_DayBold, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock Grid.Column="0" Grid.Row="8"
+                           HorizontalAlignment="Right"
+                           Text="{Binding Path=StringLibrary.Tab2Item_DayUnderline, Source={StaticResource LocalizedStrings}}" />
+                
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab2Item_NormalDay, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock Grid.Column="2" Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab2Item_Today, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock Grid.Column="3" Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab2Item_EventDay, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock Grid.Column="4" Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab2Item_TodoDay, Source={StaticResource LocalizedStrings}}" />
+                
+                <my:ColorPicker x:Name="NormalFore"
+                                Grid.Column="1" Grid.Row="2"  Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+                <my:ColorPicker x:Name="TodayFore"
+                                Grid.Column="2" Grid.Row="2" Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+                <my:ColorPicker x:Name="EventFore"
+                                Grid.Column="3" Grid.Row="2" Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+                <my:ColorPicker x:Name="TodoFore"
+                                Grid.Column="4" Grid.Row="2" Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+                
+                <my:ColorPicker x:Name="NormalBack"
+                                Grid.Column="1" Grid.Row="4" Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+                <my:ColorPicker x:Name="TodayBack"
+                                Grid.Column="2" Grid.Row="4" Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+                <my:ColorPicker x:Name="EventBack"
+                                Grid.Column="3" Grid.Row="4" Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+                <my:ColorPicker x:Name="TodoBack"
+                                Grid.Column="4" Grid.Row="4" Width="45"
+                                SelectionChanged="ColorPickerChanged" />
+                
+                <CheckBox x:Name="NormalBold" Grid.Column="1" Grid.Row="6"
+                          HorizontalAlignment="Center" Click="CheckboxChanged" />
+                <CheckBox x:Name="TodayBold" Grid.Column="2" Grid.Row="6"
+                          HorizontalAlignment="Center" Click="CheckboxChanged" />
+                <CheckBox x:Name="EventBold" Grid.Column="3" Grid.Row="6"
+                          HorizontalAlignment="Center" Click="CheckboxChanged" />
+                <CheckBox x:Name="TodoBold" Grid.Column="4" Grid.Row="6"
+                          HorizontalAlignment="Center" Click="CheckboxChanged" />
+                
+                <CheckBox x:Name="NormalUnderline" Grid.Column="1" Grid.Row="8"
+                          HorizontalAlignment="Center" Click="CheckboxChanged" />
+                <CheckBox x:Name="TodayUnderline" Grid.Column="2" Grid.Row="8"
+                          HorizontalAlignment="Center" Click="CheckboxChanged" />
+                <CheckBox x:Name="EventUnderline" Grid.Column="3" Grid.Row="8"
+                          HorizontalAlignment="Center" Click="CheckboxChanged" />
+                <CheckBox x:Name="TodoUnderline" Grid.Column="4" Grid.Row="8"
+                          HorizontalAlignment="Center" Click="CheckboxChanged" />
+                
+              </Grid>
+            </StackPanel>
+          </sdk:TabItem>
+          <sdk:TabItem
+              Header="{Binding Path=StringLibrary.Tab3_Others, Source={StaticResource LocalizedStrings}}">
+            <StackPanel Height="208" >
+              <StackPanel Orientation="Horizontal" >
+                <TextBlock VerticalAlignment="Center"
+                           Text="{Binding Path=StringLibrary.Tab3Item_Interval, Source={StaticResource LocalizedStrings}}" />
+                <TextBox x:Name="ReloadInterval" Width="30"
+                         Margin="5,0,0,0" />
+                <TextBlock VerticalAlignment="Bottom"
+                           Text="{Binding Path=StringLibrary.Tab3Item_Minute, Source={StaticResource LocalizedStrings}}" />
+              </StackPanel>
+              <TextBlock Margin="0,5,0,0"
+                         Text="{Binding Path=StringLibrary.Tab3Item_EventAction, Source={StaticResource LocalizedStrings}}" />
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="CommandText" Grid.Column="0"/>
+                <Button Grid.Column="1" ClickMode="Press"
+                        Click="SelectCommand"
+                        Content="{Binding Path=StringLibrary.Choose, Source={StaticResource LocalizedStrings}}"  />
+              </Grid>
+              <TextBlock HorizontalAlignment="Right"
+                         TextWrapping="Wrap"
+                         Text="{Binding Path=StringLibrary.Tab3Item_HttpAllowed, Source={StaticResource LocalizedStrings}}"/>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock VerticalAlignment="Center"
+                           Margin="0,0,5,0"
+                           Text="{Binding Path=StringLibrary.Tab3Item_Arguments, Source={StaticResource LocalizedStrings}}" />
+                <TextBox x:Name="Argument" Grid.Column="1" />
+              </Grid>
+              <TextBlock HorizontalAlignment="Right"
+                         Text="{Binding Path=StringLibrary.Tab3Item_MiniHelp, Source={StaticResource LocalizedStrings}}" />
+              <TextBlock Text=" " /> 
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock VerticalAlignment="Center"
+                           Margin="0,0,5,0"
+                           Text="{Binding Path=StringLibrary.Tab3Item_MVTitle, Source={StaticResource LocalizedStrings}}" />
+                <TextBox x:Name="MonthViewTitleFormat" Grid.Column="1" />
+                <TextBlock Grid.Row="1"
+                           VerticalAlignment="Center"
+                           Margin="0,0,5,0"
+                           Text="{Binding Path=StringLibrary.Tab3Item_DVTitle, Source={StaticResource LocalizedStrings}}" />
+                <TextBox x:Name="DayViewTitleFormat"
+                         Grid.Column="1"  Grid.Row="1"/>
+                <!-- Preview is not yet implemented -->
+                <!-- Button Grid.Column="1" Grid.Row="2" Content="Preview" HorizontalAlignment="Right" Click="TitleFormatPreview"/ -->
+              </Grid>
+           </StackPanel>
+          </sdk:TabItem>
+        </sdk:TabControl>
+        <HyperlinkButton x:Name="Help" NavigateUri="/help.html"
+                         TargetName="help" Margin="5,1,0,0"
+                         Content="{Binding Path=StringLibrary.Help, Source={StaticResource LocalizedStrings}}"/>
+        <TextBox x:Name="Log" Height="80" Width="128" Text="default text"
+                 Visibility="Collapsed" />
+      </StackPanel>
+    </Grid>
+</UserControl>

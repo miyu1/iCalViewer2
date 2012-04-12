@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCalDocked", "iCalDocked\iCalDocked.csproj", "{F623041A-D824-413B-8F74-C310216A7404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCalFlyout", "iCalFlyout\iCalFlyout.csproj", "{1417AB57-DC9C-4D08-A4F5-9347222E1896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCalSettings", "iCalSettings\iCalSettings.csproj", "{C56839D3-0EB1-4E56-A775-2649B04B153A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightGadgetUtilities", "SilverlightGadgetUtilities\SilverlightGadgetUtilities.csproj", "{436A6C96-CFDA-4BFF-8073-DEFDF61BFE59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCalGadgetWeb", "iCalGadgetWeb\iCalGadgetWeb.csproj", "{192F87E3-124B-490A-87CB-6EE5D8062871}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F623041A-D824-413B-8F74-C310216A7404} = {F623041A-D824-413B-8F74-C310216A7404}
+		{1417AB57-DC9C-4D08-A4F5-9347222E1896} = {1417AB57-DC9C-4D08-A4F5-9347222E1896}
+		{436A6C96-CFDA-4BFF-8073-DEFDF61BFE59} = {436A6C96-CFDA-4BFF-8073-DEFDF61BFE59}
+		{C56839D3-0EB1-4E56-A775-2649B04B153A} = {C56839D3-0EB1-4E56-A775-2649B04B153A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCalTestWeb", "iCalTestWeb\iCalTestWeb.csproj", "{2632E076-626B-455F-84F2-95EA9DEC3632}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F623041A-D824-413B-8F74-C310216A7404} = {F623041A-D824-413B-8F74-C310216A7404}
+		{1417AB57-DC9C-4D08-A4F5-9347222E1896} = {1417AB57-DC9C-4D08-A4F5-9347222E1896}
+		{436A6C96-CFDA-4BFF-8073-DEFDF61BFE59} = {436A6C96-CFDA-4BFF-8073-DEFDF61BFE59}
+		{C56839D3-0EB1-4E56-A775-2649B04B153A} = {C56839D3-0EB1-4E56-A775-2649B04B153A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCalLibrary", "iCalLibrary\iCalLibrary.csproj", "{6D05A533-0005-429E-A9B2-7487824696F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCalControls", "iCalControls\iCalControls.csproj", "{647A36AC-896E-4105-99B7-315F544812BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F623041A-D824-413B-8F74-C310216A7404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F623041A-D824-413B-8F74-C310216A7404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F623041A-D824-413B-8F74-C310216A7404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F623041A-D824-413B-8F74-C310216A7404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1417AB57-DC9C-4D08-A4F5-9347222E1896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1417AB57-DC9C-4D08-A4F5-9347222E1896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1417AB57-DC9C-4D08-A4F5-9347222E1896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1417AB57-DC9C-4D08-A4F5-9347222E1896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56839D3-0EB1-4E56-A775-2649B04B153A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56839D3-0EB1-4E56-A775-2649B04B153A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56839D3-0EB1-4E56-A775-2649B04B153A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56839D3-0EB1-4E56-A775-2649B04B153A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436A6C96-CFDA-4BFF-8073-DEFDF61BFE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436A6C96-CFDA-4BFF-8073-DEFDF61BFE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436A6C96-CFDA-4BFF-8073-DEFDF61BFE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436A6C96-CFDA-4BFF-8073-DEFDF61BFE59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{192F87E3-124B-490A-87CB-6EE5D8062871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192F87E3-124B-490A-87CB-6EE5D8062871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192F87E3-124B-490A-87CB-6EE5D8062871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192F87E3-124B-490A-87CB-6EE5D8062871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2632E076-626B-455F-84F2-95EA9DEC3632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2632E076-626B-455F-84F2-95EA9DEC3632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2632E076-626B-455F-84F2-95EA9DEC3632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2632E076-626B-455F-84F2-95EA9DEC3632}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D05A533-0005-429E-A9B2-7487824696F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D05A533-0005-429E-A9B2-7487824696F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D05A533-0005-429E-A9B2-7487824696F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D05A533-0005-429E-A9B2-7487824696F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647A36AC-896E-4105-99B7-315F544812BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647A36AC-896E-4105-99B7-315F544812BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647A36AC-896E-4105-99B7-315F544812BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647A36AC-896E-4105-99B7-315F544812BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
