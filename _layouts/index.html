@@ -29,8 +29,8 @@
       </header>
 
       <div style="text-align:right">
-        {{ page.url }}
         {% capture url %}{{ page.url | remove:'.html' }}{% endcapture %}
+        {% capture url %}{{ url | remove_first:'/' }}{% endcapture %}
         {% if url contains '_ja' %}
           <a href="{{ url | remove:'_ja' }}.html" >English</a>
         {% else %}
