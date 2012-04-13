@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!-- Copyright 2011 Miyako Komooka -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US_ASCII" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>iCal Viewer２ Help</title>
+    <style>
+      <!--
+	  h4 { margin: 0; text-decoration: underline }
+	  h5 { margin: 0 }
+	  body { max-width: 45em }
+	-->
+    </style>
+  </head>
+  <!-- body onload="init();" style="background-image: url( back.png )" -->
+  <body>
+    <p>
+      <h3>iCal Viewer 2 Help</h4>
+      <div style="text-align:right">Updated：April 7th, 2012</div>
+      <img src="images/MonthView.png" alt="iCalビューア"/><br />
+      iCal Viewer 2 is Windows 7 sidebar gadget that is to remind your
+      schedule based on iCalendar format.<br /><br />
+      iCalendar format is used by many reminder applications
+      (ex: google calendar or Lightning) to save schedule information.
+      And also it is used to notify events like sport games, conventions, etc.
+      <br />
+      This sidebar gadget is useful to check these events briefly.<br /><br />
+
+      Why iCal Viewer <em>2</em> is because I've once developed same concept
+      sidebar gadget on Vista.
+      This is full scratch of it using Microsoft Silverlight.
+      By using Silverlight, performance for bigger iCalendar file got better.
+      <br/>
+    </p>
+    <p>
+      <h4>Functions</h4>
+      <ul>
+        <li>Shows brief information of events(VEvent) and uncompleted
+          todos(VTODO) based iCalendar format file, on local or internet
+        </li>
+        <li>Supports http, webcal and caldav protocol to access iCalendar file
+          on internet</li>
+        <li>User ID and password authentificaton to access iCalendar file 
+          on internet (Basic or Digest authentication)</li>
+        <li>Uses 2 iCalendar file, one is for holidays and another is for your events and todos</li>
+        <li>Supports customization</li>
+      </ul>
+    </p>
+    <p>
+      <h4>Setting Up</h4>
+      Download iCal2.gadget file and double click it. Sidebar gadget will be automatically installed.<br /><br />
+      <img src="images/InstallSilverlight.png" alt="install silverlight"/>
+      <br />
+      If you see the image above on the sidebar gadget, Silverlight 5 runtime is
+      not installed in your PC.
+      Click the image will lead you to Silverlight 5 installation page.
+      After Silverlight 5 installation, restart the sidebar gadget.<br />
+      <br />
+      This program uses Microsoft .Net Framework 4 to access iCalendar file
+      on internet.
+      If you get error access to internet, please try install 
+      <a href="http://www.microsoft.com/download/en/details.aspx?id=17113">
+        .Net Framework 4 Client Profile runtime</a>
+    </p>
+    <p>
+      <h4>How to use</h4>
+      <img src="images/MonthView.png" alt="month view Sample"/><br />
+      First you see is monthly calendar.
+      By default, today's background color is gray,
+      and days with some events is shown as <span style="font-weight:bold">bold</span>.
+      If there is todos which date-time due or date-time to start,
+      shown as underline on calendar.<br />
+      <br />
+      Click on the calendar date, then list of events or todo of the day
+      will be displayed.
+      Title of todo is headed by square (though you can not check it).
+      <br />
+      <img src="images/DayView2.png" alt="day view sample 2" />
+      <img src="images/DayView.png" alt="day view sample" /><br />
+      If you want go back to monthly view, click title area.
+<br />
+      On monthly view, click title area will goes to yearly view.<br />
+      <img src="images/YearView.png" alt="year view sample" /><br />
+      On yearly view, you can select the month to show.<br />
+      Click title area on yearly view goes to decade view.<br />
+      <img src="images/DecadeView.png" alt="decade view" /><br />
+    </p>
+    <p>
+      <h5>Icons:</h5>
+      <img src="images/arrow4b-1l.png" alt="left arrow" />
+      <img src="images/arrow4b-1r.png" alt="right arrow" /><br />
+      Move back and front month, year etc.<br />
+      <img src="images/ico_home1_8.png" alt="back to this month" /><br />
+      Back to this month.<br />
+      <img src="images/ico_reload1_16.png" alt="reload" /><br />
+      Reload iCalendar file. Use when periodical auto reaload is not sufficient.
+      <br />
+      <img src="images/ico_clock2_8.png" alt="drawing" /><br />
+      This icon is not shown normally.
+      It is shown when processing draw.<br />
+      Normally checking and searching events from iCalendar file.<br />
+      <img src="images/ico_info1_8.png" alt="reading" /><br />
+      This icon is not shown normally.
+      It is shown when loading iCalendar file.
+    </p>
+    <p>
+      <h4>Drag &amp; Drop iCalendar file</h4>
+      You can drop &amp; drop your local file or link on the browser
+      to this sidebar gadget.
+      if the file or link is iCalendar format, events of the file will be shown.
+      
+      <img src="images/DragDrop.png" alt="drag and drop" /><br />
+    </p>
+    <p>
+      <h4>List todos</h4>
+      <img src="images/GadgetButton.png" alt="gadget button" /><br />
+      If your mouse cursor is on this gadget, you see buttons on right.
+      Click middle of these buttons shows list of todos.
+      <br />
+      <img src="images/TodoView.png" alt="todo view" /><br />
+      Same operation hides todo list.<br />
+      <br />
+      On monthly calendar, todos only with date-time due or date-time start
+      ais shown.
+      But this todo list show all todos with or without date-time,
+      but not completed.
+      There is no function to show completed todos on this gadget
+    </p>
+    <p>
+      <h4>Settting</h4>
+      If your mouse cursor is on this gadget, you see buttons on right.
+      Click bottom of these buttons shows setting view (It takes a while).<br />
+      <img src="images/setting1.png" alt="setting 1" /><br />
+      On calendar tab you can set the iCalendar file for events and holidays.
+      <br />
+      If iCalendar file is from local, click chose button to select file.
+      If the iCalendar file is from internet, directly write on the text box
+      start with http://.
+      <br />
+      'http' can be changed to webcal or caldav depend on protocol.
+      If access is via SSL, chenage to https, webcals and caldavs.
+      <br />
+      If you need authentication to access the internet file,
+      set user ID and password.<br /><br />
+      For example to access google calendar (as of now),
+      iCalendar file is caldavs://www.google.com/calendar/dav/xyz@gmail.com/events/,
+      user ID is xyz@gmail.com and password is your google account password.
+      Replace xyz to your google account. <br /><br />
+      Click 'Connection Test' button to test if
+      it is able to access iCalendar file.
+      If it is success, 'OK' is shown as a result.
+      If it is error, error message will be shown.
+      'Clear' button is to clear connection test result.
+      <br />
+      <br />
+      <img src="images/setting2.png" alt="setting 2" /><br />
+      On View tab, you can set date colors or background colors.<br /><br />
+      Background color is color of this sidebar gadget.
+      Icons can not change shape, but can change color.
+      Change color or bold/underline style of each day type.
+      Normal day color is default color of calendar date.
+      <br />
+      <br />
+
+      <img src="images/setting3.png" alt="setting 3" /><br />
+      On Others tab you can set followings.<br />
+      <br />
+      Reload interval is interval to access events and holiday calendar.
+      Set by minute(s). If you set 0 to this invterval, reload never happens.
+      <br />
+      <br />
+      On day view or todo view, you can click the title of events or todos.
+      Command setting is whant you want to do when events or todos are clicked.
+      You can execute local execution file or
+      browse internet page(http://...).<br />
+      $Y, $M, $D, $U and $$ is replaced by event or todo's year, month, day,
+      UID and $, respectively.
+      If event, dates are start date of event.
+      If todo, dates are due date of todo.
+      If due date is not set, replaced to blank.
+      UID is unique ID of events or todos which is part of
+      iCalendar format specification.
+      <br />
+      <br />      
+      You can set month view or day view title format here.<br />
+      For detail, refer to
+      <a href="http://msdn.microsoft.com/library/8kb3ddd4%28v=vs.95%29.aspx">
+        Silverlight Custom Date and Time Format Strings</a>
+    </p>
+
+    <p>
+      <h4>Misc.</h4>
+      Abount time zone.<br />
+      This program checks iCalendar format timezone, and time is converted
+      to system timezone.
+      iCalendar file must define it's timezone,
+      but some times it is not defined.
+      So this program has pre-defined timezone ID as follows:
+      <ul>
+	<li>Asia/Japan </li>
+	<li>US/Central</li>
+	<li>US/Eastern</li>
+	<li>US/Mountain</li>
+	<li>US/Pacific</li>
+      </ul>
+      If other timezone ID is used but no definition,
+      timezone is treated as standard time.
+      Which means time displayed may not correct.
+    </p>
+    <p>
+      iCalendar format is spcified by RFC5545.<br />
+      iCal Viewer 2 shows basic information of VEVENT component and
+      VTODO component. VJOURNAL and other component is ignored.
+      Repeated events (RRULE, RDATE, etc) is also supported.<br />
+    </p>
+    <p>
+      Scroll bar<br />
+      Scroll bar will be appreared if there is not enough area to show
+      information, but unfortunately you can not drag scroll bar.
+      Click each side of scroll bar will work.
+      I could not find a way to avoid this problem. Is anyone knows?
+    </p>
+    <p>
+      To access iCalendar file on internet, this gadget uses WebLoader.exe
+      execution file, which is included in installation image.
+      This execution file is based on .Net Framework 4.
+      Most web application like this uses javascript XMLHttpRequest class,
+      but I got problem when the specified URL is redirected.
+      May be because URL site is changed by redirection.
+    </p>
+    <p>
+      <h4>Thanks to</h4>
+      <a href="http://dots-design.com">DOTS・DESIGN</a>
+      There is many cool icons there
+    </p>
+    <p>
+      <h4>History</h4>
+      2012.4.7 v1.0.0.0 First Release
+    </p>
+
+  </body>
+</html>
+  
+   
