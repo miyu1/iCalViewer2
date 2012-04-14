@@ -5,7 +5,7 @@
   <!-- namespace>[Your Namespace Here]</namespace -->
   <version>1.0.0</version>
   <author name="Miyu">
-    <!-- info url="[Your URL Here]" / -->
+    <info url="http://miyu1.github.com/iCalViewer2/" />
     <logo src="icon.png" />
   </author>
   <copyright>&#169; 2011</copyright>

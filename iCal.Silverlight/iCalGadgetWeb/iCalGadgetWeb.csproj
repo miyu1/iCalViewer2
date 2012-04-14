@@ -141,6 +141,7 @@
     </Content>
     <Content Include="ja\gadget.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="ja\help.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -274,7 +275,7 @@ move "$(ProjectDir)obj\$(ConfigurationName)\$(TargetName).zip" "$(ProjectDir)bin
   <PropertyGroup>
     <PreBuildEvent>if exist "$(ProjectDir)obj\$(ConfigurationName)\$(TargetName).zip" del /F "$(ProjectDir)obj\$(ConfigurationName)\$(TargetName).zip"
 if exist "$(ProjectDir)bin\Publish\$(TargetName).gadget" del /F "$(ProjectDir)bin\Publish\$(TargetName).gadget"
-copy $(ProjectDir)..\iCalTestWeb\JapanHoliday.ics $(ProjectDir)</PreBuildEvent>
+</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

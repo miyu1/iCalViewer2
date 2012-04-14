@@ -7,19 +7,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <title>iCalビューア２ ヘルプ</title>
-    <style>
-      <!--
+    <style type="text/css">
 	  h4 { margin: 0; text-decoration: underline }
 	  h5 { margin: 0 }
 	  body { max-width: 45em }
-	-->
     </style>
   </head>
   <!-- body onload="init();" style="background-image: url( back.png )" -->
   <body>
+    <h4>iCalビューア２について</h4>
+    <div style="text-align:right">更新：2012/04/14</div>
     <p>
-      <h4>iCalビューア２について ja</h4>
-      <div style="text-align:right">更新：2012/04/05</div>
       <img src="images/MonthView.png" alt="iCalビューア"/><br />
       iCalビューワー２とは、iCalendar形式(拡張子ics)のファイルを元に、
       スケジュールをカレンダーに表示するためのサイドバー・
@@ -37,9 +35,8 @@
       処理が速くなっていると思いますが、メモリーは以前より
       使ってしまうので、環境によっては重くなるかもしれません。
     </p>
-    <p>
-      <h4>主な機能</h4>
-      <ul>
+    <h4>主な機能</h4>
+    <ul>
         <li>ローカルまたはインターネット上のiCalファイルについて、
           予定(VEvent)とタスク(VTODO)の基本的な内容を表示
           (タスクについては未処理のもののみ表示されます)
@@ -49,10 +46,9 @@
           (ベーシック認証、ダイジェスト認証)</li>
         <li>祝日用および予定・イベント用の二種類のiCalファイル</li>
         <li>画面表示の一部カスタマイズ</li>
-      </ul>
-    </p>
+    </ul>
+    <h4>セットアップ</h4>
     <p>
-      <h4>セットアップ</h4>
       現状ではWindows7でのみ動作確認をしています。
       <br />
       iCal2.gadgetファイルをダウンロードし、ダブルクリックすると
@@ -73,8 +69,8 @@
       (通常は、Windowsアップデートで自動インストールされているはずです)
 
     </p>
+    <h4>操作方法</h4>
     <p>
-      <h4>操作方法</h4>
       <img src="images/MonthView.png" alt="月表示のサンプル"/><br />
       スケジュールの表示は月ごとになっています。
       デフォルトでは、今日は背景がグレイで、
@@ -95,8 +91,8 @@
       さらにタイトル部分をクリックすると１０年ごとの表示になります。<br />
       <img src="images/DecadeView.png" alt="１０年表示のサンプル" /><br />
     </p>
+    <h5>アイコンの説明:</h5>
     <p>
-      <h5>アイコンの説明:</h5>
       <img src="images/arrow4b-1l.png" alt="左矢印" />
       <img src="images/arrow4b-1r.png" alt="右矢印" /><br />
       前の月／次の月を表示します。
@@ -114,16 +110,16 @@
       <img src="images/ico_info1_8.png" alt="読み込み中" /><br />
       通常は表示されません。iCalendarファイルの読み込み中であることを示します。
     </p>
+    <h4>iCalファイルのドラッグ＆ドロップ</h4>
     <p>
-      <h4>iCalファイルのドラッグ＆ドロップ</h4>
       ローカルのファイルや、ブラウザーで表示しているページのリンク
       をドラッグして、このガジェットにドロップすると、
       そのiCalendarファイルの内容が表示されます。
       
       <img src="images/DragDrop.png" alt="年表示のサンプル" /><br />
     </p>
+    <h4>タスク(todo)一覧表示</h4>
     <p>
-      <h4>タスク(todo)一覧表示</h4>
       <img src="images/GadgetButton.png" alt="ガジェットボタン" /><br />
       iCalビューア２にマウスを乗せた状態で右の方に出てくる
       まん中の□のようなボタンをクリックすると、
@@ -138,8 +134,8 @@
       ただし、未処理状態のものだけが表示されます。
       処理済のタスク(todo)を表示する機能はありません。<br />
     </p>
+    <h4>設定</h4>
     <p>
-      <h4>設定</h4>
       iCalビューアにマウスを乗せた状態で右の方に出てくる、
       下のレンチのようなボタンをクリックすると設定画面が出てきます。<br />
       設定画面が表示されるのに、数秒かかることがあります。<br />
@@ -198,8 +194,8 @@
 
     </p>
 
+    <h4>その他仕様など</h4>
     <p>
-      <h4>その他仕様など</h4>
       タイムゾーンについて。<br />
       iCalビューアではiCalendarファイルのタイムゾーンをチェックし、
       システムのタイムゾーンに変換して表示しています。
@@ -207,13 +203,15 @@
       一部ではタイムゾーンを定義しないで使っている場合があるようです。
       iCalビューアでは、一部のタイムゾーンについてだけ定義されていなくても
       機能するようにしてあります。そのタイムゾーンとは以下のものです。
-      <ul>
+    </p>
+    <ul>
 	<li>Asia/Japan </li>
 	<li>US/Central</li>
 	<li>US/Eastern</li>
 	<li>US/Mountain</li>
 	<li>US/Pacific</li>
-      </ul>
+    </ul>
+    <p>
       これ以外だと、グリニッジ標準時間として判断するので、時間が正しく表示されないことがあります。
     </p>
     <p>
@@ -237,14 +235,14 @@
       私のテストした範囲ではiCalファイルのURLがリダイレクトされていると
       うまく取得できないことがあったので、こうなりました。<br />
     </p>
+    <h4>謝辞</h4>
     <p>
-      <h4>謝辞</h4>
       最後になりましたが、このガジェットは<a href="http://dots-design.com">DOTS・DESIGN</a>からたくさんのアイコンを使わせていただきました。<br />
       ありがとうございます。
     </p>
+    <h4>リリース履歴</h4>
     <p>
-      <h4>リリース履歴</h4>
-      2012.4.5 v1.0.0.0 最初のリリース
+      2012.4.14 v1.0.0 最初のリリース
     </p>
 
   </body>
