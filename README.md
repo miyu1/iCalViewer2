@@ -13,9 +13,9 @@ To download source code using git,
 
       git clone git://github.com/miyu1/iCalViewer2.git
 
-
 iCal Viewer 2 uses iCalLibrary as submodule,
 so don't forget to load the submodule.
+
       git submodule init
       git submodule update
 
